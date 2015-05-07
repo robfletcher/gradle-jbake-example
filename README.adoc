@@ -1,0 +1,60 @@
+Example of dependency problems with JBake plugin using Gradle 2.4.
+
+Build with Gradle 2.3 the project builds correctly, so `./gradlew clean jbake && tree build/jbake` produces…
+
+----
+build/jbake
+├── about.html
+├── archive.html
+├── blog
+│   └── 2013
+│       ├── first-post.html
+│       ├── fourth-post.html
+│       ├── second-post.html
+│       └── third-post.html
+├── css
+│   ├── asciidoctor.css
+│   ├── base.css
+│   ├── bootstrap.min.css
+│   └── prettify.css
+├── favicon.ico
+├── feed.xml
+├── fonts
+│   ├── glyphicons-halflings-regular.eot
+│   ├── glyphicons-halflings-regular.svg
+│   ├── glyphicons-halflings-regular.ttf
+│   └── glyphicons-halflings-regular.woff
+├── index.html
+├── js
+│   ├── bootstrap.min.js
+│   ├── html5shiv.min.js
+│   ├── jquery-1.11.1.min.js
+│   └── prettify.js
+└── sitemap.xml
+----
+
+With Gradle 2.4 it seems something doesn't work quite right, so `./gradlew clean jbake && tree build/jbake` produces…
+
+----
+build/jbake
+├── archive.html
+├── css
+│   ├── asciidoctor.css
+│   ├── base.css
+│   ├── bootstrap.min.css
+│   └── prettify.css
+├── favicon.ico
+├── feed.xml
+├── fonts
+│   ├── glyphicons-halflings-regular.eot
+│   ├── glyphicons-halflings-regular.svg
+│   ├── glyphicons-halflings-regular.ttf
+│   └── glyphicons-halflings-regular.woff
+├── index.html
+├── js
+│   ├── bootstrap.min.js
+│   ├── html5shiv.min.js
+│   ├── jquery-1.11.1.min.js
+│   └── prettify.js
+└── sitemap.xml
+----
